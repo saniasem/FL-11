@@ -1,0 +1,238 @@
+@media print {
+  .tm-sidebar,
+  .boxes,
+  .flex-item.tm-team-img,
+  .carousel-indicators,
+  .img-contact-us,
+  #contact {
+    display: none;
+  }
+
+  .tm-main-content,
+  .padding-medium,
+  .carousel {
+    padding: 0 0 10px 0;
+  }
+
+  .tm-content-box {
+    margin-bottom: 0;
+  }
+
+  .tm-team-description-container {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .tm-section-title,
+  .heading h2 {
+    margin-bottom: 10px;
+    text-align: center;
+    color: lightskyblue;
+    font-weight: 300;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+
+  .tm-section-description {
+    font-size: 14px;
+  }
+
+  .heading ol {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .heading li {
+    list-style-type: none;
+  }
+
+  .heading li:nth-child(odd) {
+    align-self: flex-start;
+  }
+
+  .heading li:nth-child(even) {
+    align-self: flex-end;
+  }
+
+  .heading a {
+    color: #000;
+  }
+
+  .heading a::first-letter {
+    color: #76cdd7;
+    font-size: 150%;
+  }
+
+  .tm-footer {
+    font-size: 14px;
+  }
+}
+
+@media screen {
+  #about .box:hover h2 {
+    background-color: rgb(44, 205, 216);
+    color: #ffffff;
+  }
+
+  .flex-2-col {
+    display: flex;
+    flex-basis: 50%;
+    align-items: center;
+  }
+
+  .tm-sidebar,
+  #home,
+  section {
+    box-shadow: -1px 0px 10px 3px rgba(61, 55, 61, 0.7);
+  }
+
+  .tm-main-nav .tm-nav-item:hover {
+    background-color: #f5f5f5;
+  }
+
+  section::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 50px 0 0;
+    border-color: #76cdd7 transparent transparent;
+  }
+
+  .tm-banner {
+    background-color: #76cdd7;
+  }
+
+  .tm-banner-inner {
+    background-color: #ffffff;
+  }
+
+  .tm-banner-text::first-letter {
+    color: lightskyblue;
+  }
+
+  .tm-banner-text {
+    text-shadow: 0px 5px 2px lightskyblue;
+    letter-spacing: 5px;
+    word-spacing: 10px;
+    animation: rotation 10s infinite;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotateY(0deg);
+    }
+
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+
+  .heading h2 {
+    color: skyblue;
+    text-align: center;
+  }
+
+  .heading li {
+    list-style-type: lower-roman;
+    padding-left: 5px;
+  }
+
+  .heading a {
+    color: #000;
+  }
+
+  .heading a:hover {
+    color: #ffb347;
+    font-weight: bold;
+    text-decoration: none;
+    border-left: 2px solid #ffb347;
+    padding-left: 3px;
+    margin-left: -4px;
+  }
+
+  .heading a:visited {
+    color: #ffb347;
+  }
+
+  .heading .text:after {
+    content: "New";
+    font-size: 14px;
+    font-weight: bold;
+    color: red;
+    vertical-align: super;
+    font-variant: small-caps;
+  }
+
+  .blocks .box {
+    padding: 10px;
+  }
+  .blocks .box:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+
+  .blocks .box p {
+    font-style: italic;
+    color: #666;
+  }
+
+  .blocks .box p::first-letter {
+    font-weight: bold;
+    font-size: 150%;
+  }
+
+  .contact-form input {
+    border: none;
+    border-bottom: 2px solid lightskyblue;
+    border-radius: 3px;
+  }
+
+  .contact-form input[type="email"]:focus {
+    background-image: url(../img/email-icon.png);
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: right center;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    background: rgb(135, 206, 252);
+    border-bottom: 2px solid lightskyblue;
+  }
+
+  .contact-form textarea {
+    border: 2px solid lightskyblue;
+    border-radius: 3px;
+    resize: none;
+  }
+
+  .contact-form .btn {
+    border: 1px solid lightskyblue;
+    border-radius: 0;
+    background: #fff;
+    color: lightskyblue;
+    float: right;
+    padding: 10px 30px;
+  }
+
+  .contact-form .btn:hover {
+    border: 1px solid lightskyblue;
+    background: rgb(135, 206, 252);
+    color: #ffffff;
+  }
+
+  h2 + p {
+    font-style: italic;
+  }
+  p {
+    text-indent: 25px;
+  }
+
+  h2 + p {
+    text-indent: 30px;
+    line-height: 30px;
+  }
+}
