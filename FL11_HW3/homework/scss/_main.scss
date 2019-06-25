@@ -1,0 +1,250 @@
+@mixin btn($padding) {
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: $buttonColor;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: $padding;
+}
+
+@mixin logo {
+  display: flex;
+
+  p {
+    span {
+      display: block;
+    }
+  }
+}
+
+@mixin highlighter($width, $height, $top, $left: 0) {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    background-color: $highlightColor;
+    position: absolute;
+    width: $width;
+    height: $height;
+    top: $top;
+    left: $left;
+  }
+}
+
+$z-layers: (
+  highlighter: -1,
+  default: 1
+);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: $bodyBackground;
+}
+
+.header-wrap {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  background: $bgImg no-repeat center/cover;
+  border-bottom-right-radius: 42%;
+
+  .landing-logo {
+    @include logo;
+    padding-top: 18px;
+    font-family: "Hind", sans-serif;
+    line-height: 1;
+
+    img {
+      width: 40px;
+    }
+
+    p {
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 1.1;
+      margin-left: 10px;
+      text-align: center;
+      color: $textColor;
+    }
+
+    span {
+      font-size: 10px;
+      font-weight: normal;
+    }
+  }
+
+  .header_heading {
+    color: $textColor;
+    font-size: 64px;
+    line-height: 1;
+    font-weight: bold;
+    margin-top: 60px;
+    width: 60%;
+    z-index: map-get($z-layers, "default");
+    @include highlighter($width: 265px, $height: 25px, $top: 105px);
+    &::after {
+      z-index: map-get($z-layers, "highlighter");
+    }
+  }
+
+  .header_text {
+    margin-top: 50px;
+    color: $textColor;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.6px;
+    width: 50%;
+  }
+
+  .header_button {
+    @include btn($padding: 12px 40px);
+    font-size: 14px;
+    margin-top: 55px;
+    margin-bottom: 155px;
+  }
+}
+
+.section {
+  @extend .header-wrap;
+  padding-top: 28px;
+  position: relative;
+
+  .section_text {
+    text-align: center;
+    color: $sectionHeader;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: "Hind", sans-serif;
+    @include highlighter($width: 175px, $height: 15px, $top: 27px, $left: 51%);
+    &::after {
+      z-index: map-get($z-layers, "highlighter");
+    }
+  }
+
+  .section_card_wrap {
+    display: flex;
+    justify-content: space-between;
+
+    .section_card {
+      background: $background;
+      padding: 15px;
+      width: 33%;
+      margin-top: 20px;
+      margin-right: 15px;
+      border-radius: 5px;
+      text-align: center;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .section_card_img {
+        width: 100%;
+      }
+
+      .section_card_heading {
+        font-size: 22px;
+        color: #fff;
+        margin: 10px;
+        display: inline-block;
+
+        .section_card_underline {
+          display: block;
+          width: 100%;
+          height: 10px;
+          background-color: $highlightColor;
+          z-index: -1;
+          margin: 0 auto;
+          margin-top: -12px;
+        }
+      }
+
+      .section_card_text {
+        color: #c0c2c8;
+      }
+    }
+  }
+
+  .section_banner {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 100px;
+    width: 70%;
+    background: $gradient;
+    position: absolute;
+    bottom: -200px;
+    left: 15%;
+    .section_banner_heading {
+      color: $textColor;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .section_banner_text {
+      font-size: 12px;
+      color: #c0c2c8;
+    }
+
+    .section_banner_button {
+      @include btn($padding: 5px 25px);
+    }
+  }
+}
+
+.footer {
+  margin-top: 150px;
+  background: $background;
+  padding: 100px 0 50px 0;
+  color: $mainColor;
+
+  .footer-wrap {
+    @extend .header-wrap;
+    font-family: "Hind", sans-serif;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > * {
+      width: 30%;
+    }
+
+    .footer_logo {
+      @include logo;
+
+      img {
+        width: 40px;
+      }
+
+      p {
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 1.1;
+        margin-left: 10px;
+        text-align: center;
+        color: $mainColor;
+      }
+
+      span {
+        font-size: 10px;
+        font-weight: normal;
+      }
+    }
+
+    .footer-cr {
+      text-align: right;
+    }
+  }
+}
